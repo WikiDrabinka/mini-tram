@@ -10,8 +10,32 @@ body {
 .map {
   position: relative;
   border: 1px solid black;
-  width: 900px;
-  height: 900px;
+}
+
+.stop {
+  position: absolute;
+}
+
+@media screen and (orientation: portrait) {
+  .stop {
+    top: calc(90dvw * var(--lat));
+    left: calc(90dvw * var(--lon));
+  }
+  .map {
+    width: 90dvw;
+    height: 90dvw;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .stop {
+    top: calc(90dvh * var(--lat));
+    left: calc(90dvh * var(--lon));
+  }
+  .map {
+    width: 90dvh;
+    height: 90dvh;
+  }
 }
 
 .stop-description {
