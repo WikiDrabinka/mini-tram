@@ -1,0 +1,27 @@
+*  {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+.map {
+  position: relative;
+  border: 1px solid black;
+  width: 900px;
+  height: 900px;
+}
+
+.stop-description {
+  display: none;
+}
+
+.stop:hover > .stop-description {
+  position: inherit;
+  display: block;
+  background-color: #dddddd;
+  z-index: 2;
+  padding: 5px;
+}
