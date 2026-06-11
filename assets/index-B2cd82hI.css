@@ -1,1 +1,0 @@
-*{font-family:Lucida Sans,Lucida Sans Regular,Lucida Grande,Lucida Sans Unicode,Geneva,Verdana,sans-serif}body{place-items:center;display:grid}.map{border:1px solid #000;width:900px;height:900px;position:relative}.stop-description{display:none}.stop:hover>.stop-description{position:inherit;z-index:2;background-color:#ddd;padding:5px;display:block}
