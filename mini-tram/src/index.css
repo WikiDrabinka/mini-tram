@@ -2,6 +2,17 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+@media screen and (orientation: portrait) {
+  :root {
+    --map-size: 100dvw;
+  }
+}
+@media screen and (orientation: landscape) {
+  :root {
+    --map-size: 100dvh;
+  }
+}
+
 body {
   display: grid;
   place-items: center;
@@ -9,32 +20,20 @@ body {
 
 .map {
   position: relative;
+  width: var(--map-size);
+  height: var(--map-size);
+}
+
+.route {
+  width: var(--map-size);
+  height: var(--map-size);
 }
 
 .stop {
   position: absolute;
-}
-
-@media screen and (orientation: portrait) {
-  .stop {
-    top: calc(90dvw * var(--lat));
-    left: calc(90dvw * var(--lon));
-  }
-  .map {
-    width: 90dvw;
-    height: 90dvw;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  .stop {
-    top: calc(90dvh * var(--lat));
-    left: calc(90dvh * var(--lon));
-  }
-  .map {
-    width: 90dvh;
-    height: 90dvh;
-  }
+  top: calc(var(--map-size) * var(--lat));
+  left: calc(var(--map-size) * var(--lon));
+  transform: translate(-50%, -50%);
 }
 
 .stop-description {

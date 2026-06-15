@@ -8,6 +8,14 @@ Array.prototype.random = function () {
   return this[Math.floor((Math.random()*this.length))];
 }
 
+Array.prototype.pairs = function () {
+    let all_pairs = []
+    for (let i = 0; i < this.length - 1; ++i) {
+        all_pairs.push([this[i], this[i+1]])
+    }
+    return all_pairs
+}
+
 export function scaleLat(lat) {
   return (90-lat - min_lat)/(max_lat - min_lat)
 }
