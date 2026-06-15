@@ -27,6 +27,7 @@ body {
 .route {
   width: var(--map-size);
   height: var(--map-size);
+  z-index: -1;
 }
 
 .stop {
@@ -34,6 +35,12 @@ body {
   top: calc(var(--map-size) * var(--lat));
   left: calc(var(--map-size) * var(--lon));
   transform: translate(-50%, -50%);
+  width: calc(var(--map-size) * 0.02);
+  height: calc(var(--map-size) * 0.02);
+  z-index: 1;
+  & > svg {
+    display: block;
+  }
 }
 
 .stop-description {

@@ -6,10 +6,11 @@ function Stop({props, selected, onClick}) {
   let style = {
     "--lat" : scaleLat(props.geometry.coordinates[1]),
     "--lon" : scaleLon(props.geometry.coordinates[0]),
-    color : selected? "RebeccaPurple": "black"
   }
   return <div className="stop" style={style} onClick={onClick}>
-  <div>⦿</div>
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50%" cy="50%" r="20" fill={selected? "RebeccaPurple": "black"}></circle>
+  </svg>
   <div className="stop-description">{props.properties.stop_name}</div>
   </div>
 }
